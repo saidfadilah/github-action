@@ -25,7 +25,7 @@ jobs:
       - name: Login to docker hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build container image
-        run: docker build -t ghcr.io/${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO }}:latest .
+        run: docker build -t ghcr.io/${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO }}:1.0.0 .
 #      - name: Publish docker image
 #        run: docker push ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO }}:latest
       - name: Login to GHCR
@@ -36,5 +36,5 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish to Github Container registry
-        run: docker push ghcr.io/${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO }}:latest
+        run: docker push ghcr.io/${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO }}:1.0.0
 

@@ -40,7 +40,7 @@ jobs:
       - name: Build project with Maven
         run: mvn -B package --file pom.xml -DskipTests
       - name: Create path staging and copy file
-        run: mkdir staging && cp target/*jar-with-dependencies.jar staging
+        run: mkdir staging && cp ./target/*jar-with-dependencies.jar staging
       - name: Publish on Staging
         uses: actions/upload-artifact@v1
         with:

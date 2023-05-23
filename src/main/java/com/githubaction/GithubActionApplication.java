@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.logging.Logger;
 @RestController
 @SpringBootApplication
-@RequestMapping(value = "/")
+@RequestMapping(value = "/api")
 public class GithubActionApplication {
 	private static Logger logger = Logger.getLogger(GithubActionApplication.class.getName());
 

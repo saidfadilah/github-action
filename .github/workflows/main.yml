@@ -37,7 +37,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build image from repository
 #        run: docker build -t ghcr.io/${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO }}:1.0.0 .
-        run: docker build -t ghcr.io/${{ github.actor }}/${{ secrets.DOCKER_REPO }}:latest .
+        run: docker build -t ghcr.io/${{ github.actor }}/github-action:latest .
       - name: Publish to Github Container registry
-        run: docker push ghcr.io/${{ github.actor}}/${{ secrets.DOCKER_REPO }}:latest
+        run: docker push ghcr.io/${{ github.actor}}/github-action:latest
 
